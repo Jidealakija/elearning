@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .models import Contact
+from .models import Contact, Newsletter
 
 
 
@@ -12,7 +12,7 @@ def homepage(request):
             messages.error(request, 'email cannot be empty')
             return redirect ('contact')
         else:
-            Contact.objects.create(email = input_email)
+            Newsletter.objects.create(email = input_email)
             messages.success(request, 'Thanks for subscribing to our newsletter')
             return redirect('/')
     else:
