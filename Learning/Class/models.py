@@ -24,4 +24,4 @@ class Newsletter(models.Model):
         verbose_name_plural = 'Newsletter'
 
     def __str__(self):
-        return self.name
+        return self.email
